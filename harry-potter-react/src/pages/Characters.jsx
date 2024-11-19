@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 function Characters() {
   const [characters, setCharacters] = useState([]);
-  //console.log(characters);
   const [loading, setLoading] = useState(true);
   const url = "https://hp-api.herokuapp.com/api/characters";
 
@@ -50,12 +49,14 @@ function Characters() {
                 }}
               >
                 {character.name}
+                <ul>
                 <li>
                     {character.species}
                 </li>
                 <li>
                     {character.gender}
                 </li>
+                </ul>
               </li>
             );
           })}
