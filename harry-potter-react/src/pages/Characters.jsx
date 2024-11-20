@@ -13,7 +13,7 @@ function Characters() {
       setLoading(false);
     } catch (error) {
       console.error(
-        "an error occurred during the fetching of the characters: ",
+        "An error occurred during the fetching of the characters: ",
         error
       );
       setLoading(false);
@@ -25,44 +25,34 @@ function Characters() {
   }, []);
 
   return (
-    <div>
-      <h1>The Characters: </h1>
+    <div className="bg-[#f7f3e9] min-h-screen p-4">
+      <h1 className="text-center text-2xl font-bold text-red-800 underline mb-4">
+        The Characters:
+      </h1>
       {loading ? (
-        <p>Loading ... </p>
+        <p className="text-center">Loading ...</p>
       ) : characters.length > 0 ? (
-        <ul
-          style={{
-            backgroundColor: "lightblue",
-            padding: "1rem",
-          }}
-        >
-          {characters.map((character, index) => {
-            return (
-              <li
-                key={index}
-                style={{
-                  color: "black",
-                  fontSize: "1rem",
-                  margin: "0.5rem 0",
-                  border: "1px solid #ccc",
-                  padding: "0.5rem",
-                }}
-              >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {characters.map((character, index) => (
+            <div
+              key={index}
+              className="bg-[#fdf5e6] shadow-lg border-2 border-[#740001] rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in"
+            >
+              <img
+                src={character.image || "https://via.placeholder.com/150"}
+                alt={`${character.name}`}
+                className="w-24 h-24 rounded-full object-cover border-4 border-gold mb-4"
+              />
+              <h2 className="font-bold text-lg text-center text-[#740001]">
                 {character.name}
-                <ul>
-                <li>
-                    {character.species}
-                </li>
-                <li>
-                    {character.gender}
-                </li>
-                </ul>
-              </li>
-            );
-          })}
-        </ul>
+              </h2>
+              <p className="text-gray-700 text-center italic">{character.species}</p>
+              <p className="text-gray-700 text-center italic">{character.gender}</p>
+            </div>
+          ))}
+        </div>
       ) : (
-        <p>no character found</p>
+        <p className="text-center">No character found</p>
       )}
     </div>
   );
