@@ -1,6 +1,6 @@
 function Home() {
     return (
-      <div className="bg-castle bg-cover bg-center min-h-screen flex flex-col items-center justify-end text-center p-6 relative">
+      <div className="bg-castle bg-cover bg-center min-h-screen flex flex-col items-center justify-end text-center p-6 relative animate-fade-in">
         <div className="absolute inset-0 bg-black opacity-40"></div>
   
         <div className="relative z-10 mb-16">
