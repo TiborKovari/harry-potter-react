@@ -15,6 +15,16 @@ function Header() {
               <Link to={"/"}>Home</Link>
             </li>
           )}
+          {location.pathname !== "/houses" && (
+            <li className="hover:text-white">
+              <Link to={"/houses"}>Houses</Link>
+            </li>
+          )}
+          {location.pathname !== "/spells" && (
+            <li className="hover:text-white">
+              <Link to={"/spells"}>Spells</Link>
+            </li>
+          )}
           {location.pathname !== "/characters" && (
             <li className="hover:text-white">
               <Link to={"/characters"}>Characters</Link>
