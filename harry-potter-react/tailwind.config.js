@@ -8,6 +8,9 @@ export default {
     extend: {
       backgroundImage: {
         'castle': "url('./assets/images/fantasy-castle.jpg')",
+        'marble': "url('./assets/images/marble.jpg')",
+        'parchment': "url('./assets/images/parchment.jpg')",
+        'writing': "url('./assets/images/writing.jpg')",
       },
       colors: {
         gold: '#d4af37',

@@ -29,8 +29,8 @@ function Spells() {
     : spells;
 
   return (
-    <div className="p-6 bg-burgundy min-h-screen">
-      <h1 className="text-4xl font-harrypotter text-gold text-center mb-6">
+    <div className="p-6 bg-writing opacity-80 min-h-screen">
+      <h1 className="text-4xl font-serif font-bold text-burgundy text-center mb-6">
         The Spells:{" "}
       </h1>
 
@@ -38,7 +38,7 @@ function Spells() {
         <input
           type="text"
           placeholder="Search for a spell ... "
-          className="border-2 border-burgundy rounded-md p-2 w-1/2"
+          className="opacity-65 border-2 font-bold border-burgundy rounded-md p-2 w-1/2"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -52,10 +52,10 @@ function Spells() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr animate-fade-in">
           {filteredSpells.map((spell) => (
             <div key={spell.id}
-            className="bg-parchment p-4 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 h-full fel flex-col items-center justify-between text-center"            
+            className="bg-parchment opacity-86 p-4 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 h-full fel flex-col items-center justify-between text-center"            
             >
-              <h2 className="text-xl font-bold text-burgundy">{spell.name}</h2>
-              <p className="text-gray-700">{spell.description}</p>
+              <h2 className="text-3xl font-bold text-burgundy">{spell.name}</h2>
+              <p className="text-gray-900 font-bold">{spell.description}</p>
             </div>
           ))}
         </div>

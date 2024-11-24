@@ -30,8 +30,8 @@ function Characters() {
   ) : characters;
 
   return (
-    <div className="bg-burgundy min-h-screen p-4">
-      <h1 className="text-4xl font-harrypotter text-gold text-center mb-6">
+    <div className="bg-marble min-h-screen p-4">
+      <h1 className="text-4xl font-serif text-burgundy text-center mb-6">
         The Characters: {" "}
       </h1>
 
@@ -39,7 +39,7 @@ function Characters() {
         <input
           type="text"
           placeholder="Search for a character ... "
-          className="border-2 border-burgundy rounded-md p-2 w-1/2"
+          className="opacity-55 border-2 border-burgundy rounded-md p-2 w-1/2"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -54,7 +54,7 @@ function Characters() {
           {filteredCharacters.map((character, index) => (
             <div
               key={index}
-              className="bg-[#fdf5e6] shadow-lg border-2 border-[#740001] rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in"
+              className="bg-[#fdf5e6] opacity-85 shadow-lg border-2 border-[#740001] rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in"
             >
               <img
                 src={character.image || "https://via.placeholder.com/150"}
