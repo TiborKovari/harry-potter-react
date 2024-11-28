@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import SearchBar from "../components/SearchBar";
+import Loader from "../components/Loader"
+import CharacterGrid from "../components/CharacterGrid";
+import ErrorMessage from "../components/ErrorMessage";
 
 function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -11,12 +15,13 @@ function Characters() {
       const response = await fetch(url);
       const details = await response.json();
       setCharacters(details);
-      setLoading(false);
     } catch (error) {
       console.error(
         "An error occurred during the fetching of the characters: ",
         error
       );
+    }
+    finally {
       setLoading(false);
     }
   };
@@ -35,46 +40,14 @@ function Characters() {
         The Characters: {" "}
       </h1>
 
-      <div className="flex justify-center mb-6">
-        <input
-          type="text"
-          placeholder="Search for a character ... "
-          className="opacity-55 border-2 border-burgundy rounded-md p-2 w-1/2"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+      <SearchBar search={search} setSearch={setSearch} target={"character"}/>
 
       {loading ? (
-        <div className="flex justify-center">
-          <div className="loader border-t-4 border-b-4 border-gold rounded-full w-12 h-12 animate-spin"></div>
-        </div>
+        <Loader />
       ) : characters.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {filteredCharacters.map((character, index) => (
-            <div
-              key={index}
-              className="bg-[#fdf5e6] opacity-85 shadow-lg border-2 border-[#740001] rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in"
-            >
-              <img
-                src={character.image || "https://via.placeholder.com/150"}
-                alt={`${character.name}`}
-                className="w-24 h-24 rounded-full object-cover border-4 border-gold mb-4"
-              />
-              <h2 className="font-bold text-lg text-center text-[#740001]">
-                {character.name}
-              </h2>
-              <p className="text-gray-700 text-center italic">
-                {character.species}
-              </p>
-              <p className="text-gray-700 text-center italic">
-                {character.gender}
-              </p>
-            </div>
-          ))}
-        </div>
+        <CharacterGrid characters={filteredCharacters}/>
       ) : (
-        <p className="text-center">No character found</p>
+        <ErrorMessage />
       )}
     </div>
   );
