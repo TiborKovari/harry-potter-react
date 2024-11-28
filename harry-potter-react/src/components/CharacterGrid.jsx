@@ -1,10 +1,10 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterGrid(characters) {
+function CharacterGrid({characters}) {
 return(
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {characters.map((character)=>(
-            <CharacterCard key={index} character={character} />
+            <CharacterCard character={character} />
         ))}
     </div>
 )

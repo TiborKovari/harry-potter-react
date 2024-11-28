@@ -1,6 +1,6 @@
 function CharacterCard({ character }) {
   return (
-    <div className="bg-[#fdf5e6] opacity-85 shadow-lg border-2 border-[#740001] rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in">
+    <div key={character.id} className="bg-[#fdf5e6] opacity-85 shadow-lg border-2 border-burgundy rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in">
       <img
         src={character.image || "https://via.placeholder.com/150"}
         alt={`${character.name}`}
