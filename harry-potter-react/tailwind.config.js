@@ -19,12 +19,17 @@ export default {
       },
       animation: {
         "fade-in": "fadeIn 2s ease-in-out",
+        "fade-out": "fadeOut 2s ease-out",
         sparkle: "sparkle 1.5s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
+        },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
         sparkle: {
           "0%, 100%": {
