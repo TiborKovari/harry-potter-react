@@ -8,6 +8,7 @@ export default {
         marble: "url('./assets/images/marble.jpg')",
         parchment: "url('./assets/images/parchment.jpg')",
         writing: "url('./assets/images/writing.jpg')",
+        hat: "url(./assets/images/sortingHat.jpg)",
       },
       colors: {
         gold: "#d4af37",
@@ -20,6 +21,7 @@ export default {
       animation: {
         "fade-in": "fadeIn 2s ease-in-out",
         "fade-out": "fadeOut 2s ease-out",
+        "spin-in": "spinIn 1.2s ease-out forwards",
         sparkle: "sparkle 1.5s ease-in-out infinite",
       },
       keyframes: {
@@ -30,6 +32,10 @@ export default {
         fadeOut: {
           "0%": { opacity: 1 },
           "100%": { opacity: 0 },
+        },
+        spinIn: {
+          "0%": { opacity: 0, transform: "rotate(-180deg) scale(0)" },
+          "100%": { opacity: 1, transform: "rotate(0deg) scale(1)" },
         },
         sparkle: {
           "0%, 100%": {
