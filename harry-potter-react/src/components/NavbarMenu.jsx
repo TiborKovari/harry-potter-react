@@ -34,7 +34,7 @@ function NavbarMenu({ isMenuOpen, location, closeMenu }) {
         <li
           key={item.path}
           className={`hover:text-white ${
-            item.path === location.pathName
+            item.path === location.pathname
               ? "bg-gold opacity-70 text-burgundy"
               : ""
           }`}
