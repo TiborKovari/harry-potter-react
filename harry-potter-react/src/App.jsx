@@ -4,6 +4,7 @@ import Characters from "./pages/Characters";
 import Header from "./components/Header";
 import Spells from "./pages/Spells";
 import Houses from "./pages/Houses";
+import HouseDetails from "./pages/HouseDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/houses" element={<Houses />} />
         <Route path="/spells" element={<Spells />} />
         <Route path="/characters" element={<Characters />} />
+        <Route path={`/houses/:id`} element={< HouseDetails/>} />
       </Routes>
     </Router>
   );
