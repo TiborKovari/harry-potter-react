@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Spells from "./pages/Spells";
 import Houses from "./pages/Houses";
 import HouseDetails from "./pages/HouseDetails";
+import CharacterDetails from "./pages/CharacterDetails";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/houses" element={<Houses />} />
         <Route path="/spells" element={<Spells />} />
         <Route path="/characters" element={<Characters />} />
-        <Route path={`/houses/:id`} element={< HouseDetails/>} />
+        <Route path="/houses/:id" element={< HouseDetails/>} />
+        <Route path="/character/:id" element={< CharacterDetails />} />
       </Routes>
     </Router>
   );
