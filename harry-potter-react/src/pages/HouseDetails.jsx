@@ -60,7 +60,7 @@ function HouseDetails() {
       const details = await results.json();
       setCharacters(details);
     } catch (error) {
-      console.error("an error catched whyle fetching: ", error);
+      console.error("an error occurred while fetching: ", error);
     } finally {
       setLoading(false);
     }

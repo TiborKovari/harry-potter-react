@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CharacterPresentation from "../components/CharacterPresentation";
 import Loader from "../components/Loader";
 
 function CharacterDetails() {
@@ -15,7 +16,6 @@ function CharacterDetails() {
       const result = await fetch(url(param.id));
       const details = await result.json();
       setCharacter(details);
-      console.log("details: ", details);
     } catch (error) {
       console.error("fetching was not possible due to: ", error);
     } finally {
@@ -34,7 +34,7 @@ function CharacterDetails() {
       {loading ? (
         <Loader />
       ) : (
-        character && <h1 className="flex justify-center">{character[0].name}</h1>
+        character && <CharacterPresentation character={character[0].id}/>
       )}
     </div>
   );

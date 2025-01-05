@@ -6,3 +6,8 @@
   font-family: 'HarryPotter';
   src: url('./assets/fonts/harrip.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('./assets/fonts/CinzelDecorative-regular.ttf') format('truetype');
+}

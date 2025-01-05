@@ -17,6 +17,7 @@ export default {
       },
       fontFamily: {
         harrypotter: ["HarryPotter", "serif"],
+        cinzel: ["Cinzel", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 2s ease-in-out",
