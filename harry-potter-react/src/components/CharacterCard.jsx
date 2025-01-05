@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+import randomWizard from "../assets/images/randomWizard.jpg"
+
 function CharacterCard({ character }) {
   return (
+    <Link to={`/character/${character.id}`}>
     <div key={character.id} className="bg-[#fdf5e6] opacity-85 shadow-lg border-2 border-burgundy rounded-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in">
       <img
-        src={character.image || "https://via.placeholder.com/150"}
+        src={character.image || randomWizard}
         alt={`${character.name}`}
         className="w-24 h-24 rounded-full object-cover border-4 border-gold mb-4"
       />
@@ -12,6 +16,7 @@ function CharacterCard({ character }) {
       <p className="text-gray-700 text-center italic">{character.species}</p>
       <p className="text-gray-700 text-center italic">{character.gender}</p>
     </div>
+    </Link>
   );
 }
 
