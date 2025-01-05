@@ -1,11 +1,8 @@
 <a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
-<br />
-<div align="center ">
-  <a href="https://github.com/TiborKovari/harry-potter-react">
-    <img src="./src/assets/images/hpapp.png" width= "600" style="height: auto;"  alt="Harry Potter Logo" width="80" height="80">
-  </a>
+
+[![Harry Potter Logo](./src/assets/images/hpapp.png)](https://github.com/TiborKovari/harry-potter-react)
 
 <h3 align="center">Harry Potter React Project</h3>
 
